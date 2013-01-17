@@ -19,7 +19,11 @@ exports.connect = function(opts, callback) {
         _.extend({ type: 'connect' }, opts),
 
         function(err, response) {
+            if (err) return callback(err);
 
+            // initialise the connection sessionid
+
+            callback(null, connection);
         }
     );
 };
