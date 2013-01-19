@@ -1,6 +1,5 @@
 var Connection = require('./lib/connection'),
     OrientError = require('./lib/error'),
-    commander = require('./lib/commander'),
     _ = require('underscore');
 
 module.exports = function(opts) {
