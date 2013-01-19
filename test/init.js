@@ -15,6 +15,6 @@ describe('simple initialization tests', function() {
     it('should be able to specify a database name to use', function() {
         connection.use('orienteer-test');
 
-        assert.equal(connection.db, 'orienteer-test');
+        assert.equal(connection.dbname, 'orienteer-test');
     });
 });
