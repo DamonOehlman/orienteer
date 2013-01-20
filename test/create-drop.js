@@ -11,10 +11,20 @@ describe('simple connection tests', function() {
     });
 
     it('should be able to create a test database', function(done) {
-        connection.createDb({ name: testDbName }, done);
+        connection.dbCreate({ name: testDbName }, done);
+    });
+
+    it('should be able to verify the test db exists', function(done) {
+        connection.dbExist({ name: testDbName }, function(err, response) {
+            assert.ifError(err);
+            assert(response);
+            assert(response.exists);
+
+            done();
+        });
     });
 
     it('should be able to drop the test database', function(done) {
-        connection.dropDb({ name: testDbName }, done);
+        connection.dbDelete({ name: testDbName }, done);
     });
 });
