@@ -20,7 +20,7 @@ describe('sql command tests', function() {
     });
 
     it('should be able to use the new db', function() {
-        connection.use(testDbName);
+        connection.useGraph(testDbName);
     });
 
     it('should be able to run a CREATE CLASS command', function(done) {
