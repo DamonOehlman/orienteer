@@ -18,6 +18,9 @@
     "mocha": "1.8.x",
     "node-uuid": "1.4.x"
   },
+  "optionalDependencies": {
+    "request": "git://github.com/mikeal/request.git"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/DamonOehlman/orienteer.git"
