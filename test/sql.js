@@ -31,6 +31,13 @@ describe('sql command tests', function() {
         connection.sql('CREATE CLASS test EXTENDS OGraphVertex', done);
     });
 
+    it('should not be able to create the class again', function(done) {
+        connection.sql('CREATE CLASS test EXTENDS OGraphVertex', function(err) {
+            assert(err);
+            done();
+        });
+    });
+
     it('should be able to define a property for test', function(done) {
         connection.sql('CREATE PROPERTY test.id STRING', done);
     });
