@@ -23,11 +23,19 @@ describe('sql command tests', function() {
         connection.db(testDbName, 'graph');
     });
 
+    it('should be able to get an admin connection', function() {
+        connection = connection.as('admin');
+    });
+
     it('should be able to run a CREATE CLASS command', function(done) {
-        connection.as('admin').sql('CREATE CLASS test EXTENDS OGraphVertex', done);
+        connection.sql('CREATE CLASS test EXTENDS OGraphVertex', done);
     });
 
     it('should be able to define a property for test', function(done) {
-        connection.as('admin').sql('CREATE PROPERTY test.id STRING', done);
+        connection.sql('CREATE PROPERTY test.id STRING', done);
+    });
+
+    it('should be able to create an index on id', function(done) {
+        connection.sql('CREATE INDEX test.id UNIQUE', done);
     });
 });
