@@ -12,7 +12,7 @@ describe('sql command tests', function() {
     });
 
     it('should be able to create an orienteer connection object', function() {
-        assert(connection = orienteer(config.connection));
+        assert(connection = orienteer(config));
     });
 
     it('should be able to create a test graph database', function(done) {
