@@ -8,7 +8,7 @@ var assert = require('assert'),
 describe('sql command tests', function() {
 
     after(function(done) {
-        connection.dbDelete({ name: testDbName }, done);
+        connection.as('root').dbDelete({ name: testDbName }, done);
     });
 
     it('should be able to create an orienteer connection object', function() {
@@ -16,14 +16,18 @@ describe('sql command tests', function() {
     });
 
     it('should be able to create a test graph database', function(done) {
-        connection.dbCreate({ name: testDbName, type: 'graph' }, done);
+        connection.as('root').dbCreate({ name: testDbName, type: 'graph' }, done);
     });
 
     it('should be able to use the new db', function() {
-        connection.useGraph(testDbName);
+        connection.db(testDbName, 'graph');
     });
 
     it('should be able to run a CREATE CLASS command', function(done) {
-        connection.sql('CREATE CLASS test EXTENDS OGraphVertex', done);
+        connection.as('admin').sql('CREATE CLASS test EXTENDS OGraphVertex', done);
+    });
+
+    it('should be able to define a property for test', function(done) {
+        connection.as('admin').sql('CREATE PROPERTY test.id STRING', done);
     });
 });
