@@ -1,9 +1,11 @@
 var assert = require('assert'),
+    async = require('async'),
     uuid = require('node-uuid'),
     config = require('./config'),
     randomName = require('random-name'),
     orienteer = require('../'),
     testDbName = uuid.v4(),
+    itemsToInsert = 20,
     connection;
 
 function testPerson() {
@@ -67,5 +69,35 @@ describe('sql command tests', function() {
                 done();
             }
         );
+    });
+
+    it('should be able to insert multiple records', function(done) {
+        var counter = itemsToInsert;
+
+        async.whilst(
+            function() {
+                return counter--;
+            },
+
+            function(itemCallback) {
+                connection.sql(
+                    'INSERT INTO test ' + orienteer.objectTo('SET', testPerson()),
+                    itemCallback
+                );
+            },
+
+            done
+        );
+    });
+
+    it('should be able to retrieve the inserted items', function(done) {
+        connection.sql('SELECT FROM test', function(err, results) {
+            assert.ifError(err);
+
+            // validate that we got the number of items we inserted back
+            assert.equal(results.length, itemsToInsert + 1);
+            
+            done();
+        });
     });
 });
