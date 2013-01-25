@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "mocha": "1.8.x",
-    "node-uuid": "1.4.x"
+    "node-uuid": "1.4.x",
+    "random-name": "0.1.x"
   },
   "repository": {
     "type": "git",

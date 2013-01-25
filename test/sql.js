@@ -1,9 +1,17 @@
 var assert = require('assert'),
     uuid = require('node-uuid'),
     config = require('./config'),
+    randomName = require('random-name'),
     orienteer = require('../'),
     testDbName = uuid.v4(),
     connection;
+
+function testPerson() {
+    return {
+        id: uuid.v4(),
+        name: randomName()
+    };
+}
 
 describe('sql command tests', function() {
 
@@ -44,5 +52,20 @@ describe('sql command tests', function() {
 
     it('should be able to create an index on id', function(done) {
         connection.sql('CREATE INDEX test.id UNIQUE', done);
+    });
+
+    it('should be able to insert a test record', function(done) {
+        connection.sql(
+            'INSERT INTO test ' + orienteer.objectTo('SET', testPerson()),
+            function(err, results) {
+                assert.ifError(err);
+
+                // assert that we received a result
+                assert(results[0]);
+                assert(results[0]['@rid']);
+
+                done();
+            }
+        );
     });
 });

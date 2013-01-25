@@ -9,6 +9,13 @@ describe('object to SQL set statment conversion', function() {
         assert.equal(statement, 'SET name = "Fred"');
     });
 
+    it('should properly escape strings', function() {
+        var statement = orienteer.objectTo('SET', { name: 'Jack O\'Neil' });
+
+        assert(statement);
+        assert.equal(statement, 'SET name = "Jack O\\\'Neil"');
+    });
+
     it('should not quote non-strings', function() {
         var statement = orienteer.objectTo('SET', { age: 35 });
 
