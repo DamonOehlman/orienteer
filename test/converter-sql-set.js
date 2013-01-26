@@ -30,10 +30,20 @@ describe('object to SQL set statment conversion', function() {
     it('should convert a multi-value object to a comma-separated statement', function() {
         var statement = orienteer.objectTo('SET', {
                 name: 'Fred',
-                age: 35            
+                age: 35
             });
 
         assert(statement);
         assert.equal(statement, 'SET name = "Fred", age = 35');
+    });
+
+    it('should be able to convert an array value', function() {
+        var statement = orienteer.objectTo('SET', {
+                name: 'Fred',
+                friends: ['Bob', 'Sue']
+            });
+
+        assert(statement);
+        assert.equal(statement, 'SET name = "Fred", friends = ["Bob", "Sue"]');
     });
 });
