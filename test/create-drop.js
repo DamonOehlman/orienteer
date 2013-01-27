@@ -26,6 +26,7 @@ describe('simple connection tests', function() {
         });
     });
 
+    /*
     it('should be able to drop the test database', function(done) {
         connection.as('root').dbDelete({ name: testDbName }, done);
     });
@@ -39,4 +40,5 @@ describe('simple connection tests', function() {
             done();
         });
     });
+*/
 });
