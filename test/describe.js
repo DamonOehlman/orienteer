@@ -18,8 +18,7 @@ describe('describe tests', function() {
         connection.describe(testDbName, function(err, info) {
             assert.ifError(err);
 
-            console.log(err);
-            console.log(info);
+            console.log(require('util').inspect(info.roles, true, null, true));
 
             done();
         });
