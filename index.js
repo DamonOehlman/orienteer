@@ -17,3 +17,6 @@ orienteer.objectTo = function(target, data) {
 
 	return converter(data);
 };
+
+// export the error codes
+_.extend(orienteer, require('./lib/errors'));
