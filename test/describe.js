@@ -1,5 +1,6 @@
 var assert = require('assert'),
     uuid = require('node-uuid'),
+    errors = require('../lib/errors'),
     config = require('./config'),
     orienteer = require('../'),
     testDbName = uuid.v4(),
@@ -29,6 +30,13 @@ describe('describe tests', function() {
             assert(info, 'No info received on OGraphVertex class');
             assert.equal(info.name, 'OGraphVertex');
 
+            done();
+        });
+    });
+
+    it('should be able return a no-class error when attempting to describe a non-existant class', function(done) {
+        connection.db(testDbName).describe(uuid.v4(), function(err, info) {
+            assert(err instanceof errors.OrientNoClassError);
             done();
         });
     });
