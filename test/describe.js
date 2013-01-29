@@ -18,7 +18,16 @@ describe('describe tests', function() {
         connection.describe(testDbName, function(err, info) {
             assert.ifError(err);
 
-            console.log(require('util').inspect(info.roles, true, null, true));
+            assert(info, 'No info received on db: ' + testDbName);
+            done();
+        });
+    });
+    it('should be able to describe the OGraphVertex class', function(done) {
+        connection.db(testDbName).describe('OGraphVertex', function(err, info) {
+            assert.ifError(err);
+
+            assert(info, 'No info received on OGraphVertex class');
+            assert.equal(info.name, 'OGraphVertex');
 
             done();
         });
