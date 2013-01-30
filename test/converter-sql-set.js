@@ -44,6 +44,19 @@ describe('object to SQL set statment conversion', function() {
             });
 
         assert(statement);
-        assert.equal(statement, 'SET name = "Fred", friends = ["Bob", "Sue"]');
+        assert.equal(statement, 'SET name = "Fred", friends = ["Bob","Sue"]');
+    });
+
+    it('should be able to convert an embedded object', function() {
+        var statement = orienteer.objectTo('SET', {
+            name: 'Fred',
+            address: {
+                street: 'D\'Aguilar Highway',
+                suburb: 'Caboolture'
+            }
+        });
+
+        assert(statement);
+        assert.equal(statement, 'SET name = "Fred", address = {"street":"D\\\'Aguilar Highway","suburb":"Caboolture"}');
     });
 });
