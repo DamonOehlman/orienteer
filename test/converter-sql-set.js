@@ -59,4 +59,13 @@ describe('object to SQL set statment conversion', function() {
         assert(statement);
         assert.equal(statement, 'SET name = "Fred", address = {"street":"D\\\'Aguilar Highway","suburb":"Caboolture"}');
     });
+
+    it('should be able to convert an rid', function() {
+        var statement = orienteer.objectTo('SET', {
+                reference: orienteer.rid('#10:1')
+            });
+
+        assert(statement);
+        assert.equal(statement, 'SET reference = #10:1');
+    });
 });
