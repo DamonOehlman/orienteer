@@ -100,4 +100,11 @@ describe('sql command tests', function() {
             done();
         });
     });
+
+    it('should be able to use like statement % character', function(done) {
+        connection.sql('SELECT FROM test WHERE name LIKE "A%"', function(err, results) {
+            assert.ifError(err);
+            done();
+        });
+    });
 });
