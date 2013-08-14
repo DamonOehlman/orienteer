@@ -1,5 +1,5 @@
 var assert = require('assert'),
-    uuid = require('node-uuid'),
+    uuid = require('uuid'),
     config = require('./config'),
     orienteer = require('../'),
     testDbName = uuid.v4(),
@@ -16,8 +16,6 @@ describe('simple connection tests', function() {
 
     it('should be able to verify the test db exists', function(done) {
         connection.dbExist({ name: testDbName }, function(err, response) {
-            console.log(response);
-
             assert.ifError(err);
             assert(response);
             assert(response.exists);
