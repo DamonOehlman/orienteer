@@ -24,7 +24,8 @@
     "url": "http://github.com/DamonOehlman/orienteer/issues"
   },
   "scripts": {
-    "test": "$(npm bin)/mocha --reporter spec -t 30s"
+    "test": "$(npm bin)/mocha --reporter spec -t 30s",
+    "gendocs": "sourcecat | emu > README.md"
   },
   "contributors": [],
   "main": "index.js",
