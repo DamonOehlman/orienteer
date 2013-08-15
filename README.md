@@ -5,20 +5,14 @@ Orienteer is a library designed for working with
 [REST API](https://github.com/orientechnologies/orientdb/wiki/OrientDB-REST)
 but support is also planned for the binary driver also.
 
-[
-![unstable]
-(http://hughsk.github.io/stability-badges/dist/unstable.svg)
-](http://github.com/hughsk/stability-badges)
-
 If you are primarily interested in working with the binary driver, however,
 I'd recommend taking a look at
 [node-orientdb](https://github.com/gabipetrovay/node-orientdb) instead.
 
-## Installation
 
-```
-npm install orienteer --save
-```
+[![NPM](https://nodei.co/npm/orienteer.png)](https://nodei.co/npm/orienteer/)
+
+[![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://github.com/hughsk/stability-badges)
 
 ## Getting Started
 

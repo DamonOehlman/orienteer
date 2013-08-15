@@ -25,7 +25,7 @@
   },
   "scripts": {
     "test": "$(npm bin)/mocha --reporter spec -t 30s",
-    "gendocs": "sourcecat | emu > README.md"
+    "gendocs": "gendocs > README.md"
   },
   "contributors": [],
   "main": "index.js",
