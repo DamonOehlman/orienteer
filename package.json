@@ -2,7 +2,7 @@
   "name": "orienteer",
   "description": "Experimental OrientDB Driver",
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "dependencies": {
     "async": "~0.8",
     "debug": "*",
