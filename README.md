@@ -5,22 +5,18 @@ Orienteer is a library designed for working with
 [REST API](https://github.com/orientechnologies/orientdb/wiki/OrientDB-REST)
 but support is also planned for the binary driver also.
 
-If you are primarily interested in working with the binary driver, however,
-I'd recommend taking a look at
-[node-orientdb](https://github.com/gabipetrovay/node-orientdb) instead.
-
 
 [![NPM](https://nodei.co/npm/orienteer.png)](https://nodei.co/npm/orienteer/)
 
-[![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://github.com/hughsk/stability-badges)
+![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)
 
-## Getting Started
+## Alternative Implementations
 
-To be completed.
+At this time, this project is inactive. The following are some alternative
+node modules that interface with OrientDB:
 
-```js
-var orienteer = require('orienteer');
-```
+- [oriento](https://github.com/codemix/oriento)
+- [node-orientdb](https://github.com/gabipetrovay/node-orientdb)
 
 ## Reference
 

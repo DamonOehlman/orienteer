@@ -15,17 +15,13 @@ var converters = require('./lib/converters');
   [REST API](https://github.com/orientechnologies/orientdb/wiki/OrientDB-REST)
   but support is also planned for the binary driver also.
 
-  If you are primarily interested in working with the binary driver, however,
-  I'd recommend taking a look at
-  [node-orientdb](https://github.com/gabipetrovay/node-orientdb) instead.
+  ## Alternative Implementations
 
-  ## Getting Started
+  At this time, this project is inactive. The following are some alternative
+  node modules that interface with OrientDB:
 
-  To be completed.
-
-  ```js
-  var orienteer = require('orienteer');
-  ```
+  - [oriento](https://github.com/codemix/oriento)
+  - [node-orientdb](https://github.com/gabipetrovay/node-orientdb)
 
   ## Reference
 **/
