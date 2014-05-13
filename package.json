@@ -2,19 +2,16 @@
   "name": "orienteer",
   "description": "Experimental OrientDB Driver",
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "tags": [
-    "orientdb"
-  ],
   "version": "0.2.0",
   "dependencies": {
-    "async": "~0.2.9",
+    "async": "~0.8",
     "debug": "*",
-    "underscore": "~1.5.1"
+    "underscore": "^1"
   },
   "devDependencies": {
-    "mocha": "~1.12.0",
-    "uuid": "~1.4.1",
-    "random-name": "0.1.x"
+    "mocha": "^1",
+    "uuid": "^1",
+    "random-name": "~0.1"
   },
   "repository": {
     "type": "git",
@@ -24,7 +21,7 @@
     "url": "http://github.com/DamonOehlman/orienteer/issues"
   },
   "scripts": {
-    "test": "$(npm bin)/mocha --reporter spec -t 30s",
+    "test": "mocha --reporter spec -t 30s",
     "gendocs": "gendocs > README.md"
   },
   "contributors": [],
