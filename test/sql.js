@@ -119,14 +119,4 @@ describe('sql command tests', function() {
         done();
     });
   });
-
-  it('should be able use regexes with \\w specified', function(done) {
-    connection.sql(
-      'SELECT FROM test WHERE name MATCHES "^\\w+\\s+\\w+"',
-      function(err, results) {
-        assert.ifError(err);
-        assert.equal(results.length, itemsToInsert + 1);
-        done();
-    });
-  });
 });
